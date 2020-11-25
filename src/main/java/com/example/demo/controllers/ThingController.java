@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Thing;
+import com.example.demo.entities.dto.ThingDTO;
+import com.example.demo.entities.dto.ThingsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +19,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("things")
 public class ThingController {
-    private static final String THING_URL = "http://10.102.197.193:8089";
+    private static final String THING_URL = "http://localhost:8089";
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final HttpHeaders headers = new HttpHeaders();
     private static final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);
@@ -28,11 +30,13 @@ public class ThingController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Thing>> show() {
-        ResponseEntity<Thing[]> response = restTemplate
-                .exchange(THING_URL + "/things", HttpMethod.GET, headersEntity, Thing[].class);
-        List<Thing> items = Arrays.asList(Objects.requireNonNull(response.getBody()));
-        return ResponseEntity.ok(items);
+    public @ResponseBody
+    ThingsDTO show() {
+        ResponseEntity<ThingsDTO> response = restTemplate
+                .exchange(THING_URL + "/things", HttpMethod.GET, headersEntity, ThingsDTO.class);
+        //List<Thing> items = Arrays.asList(Objects.requireNonNull(response.getBody()));
+        System.out.println(response.getBody().getThings());
+        return Objects.requireNonNull(response.getBody());
     }
 
     @GetMapping("{id}")

@@ -3,9 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.entities.Seller;
 import com.example.demo.entities.Thing;
 import com.example.demo.entities.dto.ServeDTO;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -20,7 +17,7 @@ import java.util.*;
 @RequestMapping("sellers")
 public class SellerController {
 
-    private static final String SELLER_URL = "http://10.102.197.193:8089";
+    private static final String SELLER_URL = "http://localhost:8089";
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final HttpHeaders headers = new HttpHeaders();
     private static final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);

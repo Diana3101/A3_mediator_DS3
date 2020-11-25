@@ -1,8 +1,5 @@
 package com.example.demo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,10 +13,9 @@ public class Seller {
 
     }
 
-    public Seller(String firstName, String lastName, List<Thing> addedClothing) {
+    public Seller(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.addedClothing = addedClothing;
     }
 
     public UUID getId() {
@@ -38,10 +34,6 @@ public class Seller {
         this.lastName = lastName;
     }
 
-    public void setAddedClothing(List<Thing> addedClothing) {
-        this.addedClothing = addedClothing;
-    }
-
     public String getFirstName(){
         return firstName;
     }
@@ -50,10 +42,13 @@ public class Seller {
         return lastName;
     }
 
-    public List<Thing> getAddedClothing(){
+    public List<Thing> getAddedClothing() {
         return addedClothing;
     }
 
+    public void setAddedClothing(List<Thing> addedClothing) {
+        this.addedClothing = addedClothing;
+    }
 
     @Override
     public String toString() {
@@ -61,7 +56,6 @@ public class Seller {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", addedClothing=" + addedClothing +
                 '}';
     }
 }

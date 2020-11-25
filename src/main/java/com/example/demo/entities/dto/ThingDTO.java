@@ -1,34 +1,37 @@
-package com.example.demo.entities;
+package com.example.demo.entities.dto;
+
+
+
+import com.example.demo.entities.ConditionOfThing;
+import com.example.demo.entities.Size;
 
 import java.util.UUID;
 
-public class Thing {
-    private UUID id;
+public class ThingDTO {
+    private UUID thingId;
     private String name;
     private Size size;
     private ConditionOfThing condition;
     private double price;
-    private Seller addedBy;
+    private int quantity;
 
-    public Thing() {
+    public ThingDTO(){}
 
-    }
-
-    public Thing(UUID id, String name, Size size, ConditionOfThing condition, double price, Seller addedBy) {
-        this.id = id;
+    public ThingDTO(UUID thingId, String name, Size size, ConditionOfThing condition, double price, int quantity) {
+        this.thingId = thingId;
         this.name = name;
         this.size = size;
         this.condition = condition;
         this.price = price;
-        this.addedBy = addedBy;
+        this.quantity = quantity;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getThingId() {
+        return thingId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setThingId(UUID thingId) {
+        this.thingId = thingId;
     }
 
     public String getName() {
@@ -63,22 +66,23 @@ public class Thing {
         this.price = price;
     }
 
-    public Seller getAddedBy() {
-        return addedBy;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setAddedBy(Seller addedBy) {
-        this.addedBy = addedBy;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
     public String toString() {
-        return "Thing{" +
-                "id=" + id +
-                ", name=" + name +
+        return "ThingDTO{" +
+                "thingId=" + thingId +
+                ", name='" + name + '\'' +
                 ", size=" + size +
                 ", condition=" + condition +
                 ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 }
