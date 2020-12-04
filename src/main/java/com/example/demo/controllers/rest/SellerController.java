@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.controllers.rest;
 
 import com.example.demo.entities.Seller;
 import com.example.demo.entities.Thing;
@@ -17,7 +17,7 @@ import java.util.*;
 @RequestMapping("sellers")
 public class SellerController {
 
-    private static final String SELLER_URL = "http://localhost:8089";
+    private static final String SELLER_URL = "http://sellers-service:8089";
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final HttpHeaders headers = new HttpHeaders();
     private static final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);

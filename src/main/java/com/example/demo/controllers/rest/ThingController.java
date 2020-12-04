@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.controllers.rest;
 
 import com.example.demo.entities.Thing;
 import com.example.demo.entities.dto.ThingDTO;
@@ -19,7 +19,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("things")
 public class ThingController {
-    private static final String THING_URL = "http://localhost:8089";
+    private static final String THING_URL = "http://sellers-service:8089";
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final HttpHeaders headers = new HttpHeaders();
     private static final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);

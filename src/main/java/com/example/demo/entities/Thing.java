@@ -5,8 +5,8 @@ import java.util.UUID;
 public class Thing {
     private UUID id;
     private String name;
-    private Size size;
-    private ConditionOfThing condition;
+    private String size;
+    private String condition;
     private double price;
     private Seller addedBy;
 
@@ -14,7 +14,7 @@ public class Thing {
 
     }
 
-    public Thing(UUID id, String name, Size size, ConditionOfThing condition, double price, Seller addedBy) {
+    public Thing(UUID id, String name, String size, String condition, double price, Seller addedBy) {
         this.id = id;
         this.name = name;
         this.size = size;
@@ -39,19 +39,19 @@ public class Thing {
         this.name = name;
     }
 
-    public Size getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Size size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public ConditionOfThing getCondition() {
+    public String getCondition() {
         return condition;
     }
 
-    public void setCondition(ConditionOfThing condition) {
+    public void setCondition(String condition) {
         this.condition = condition;
     }
 

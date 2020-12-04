@@ -6,13 +6,13 @@ public class Customer {
     private UUID customerId;
     private String firstName;
     private String lastName;
-    private Size size;
+    private String size;
 
     public Customer(){
 
     }
 
-    public Customer(String firstName, String lastName, Size size) {
+    public Customer(String firstName, String lastName, String size) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.size = size;
@@ -34,11 +34,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Size getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Size size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
